@@ -1,0 +1,149 @@
+/* Overall container styling */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f06c64, #7a42f4, #3a8bd0, #4cd3c2); /* Mixed solid colors in a gradient */
+  padding: 20px;
+}
+
+/* Title styling with animation */
+h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 20px;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Upload section styling */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-in-out;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* File input styling */
+#resume-upload {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+/* Submit button styling */
+.submit-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #f06c64, #7a42f4, #3a8bd0, #4cd3c2); /* Match with background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #3a8bd0, #4cd3c2); /* Slight variation on hover */
+  transform: translateY(-3px);
+}
+
+
+/* Job role dropdown styling */
+.job-role-section {
+  margin-top: 20px;
+}
+
+#job-role {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f06c64, #7a42f4, #3a8bd0, #4cd3c2); /* Match with background */
+  color: white;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#job-role:hover {
+  background: linear-gradient(135deg, #3a8bd0, #4cd3c2); /* Slight variation on hover */
+  border-color: #007bff;
+}
+
+#job-role option {
+  background-color: #343a40; /* Dark background for options */
+  color: white; /* White text for contrast */
+}
+
+/* Candidate details section styling */
+.candidate-details {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-details h3 {
+  font-size: 1.5rem;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+.candidate-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.candidate-details td {
+  padding: 8px 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.candidate-details td:first-child {
+  font-weight: bold;
+  width: 30%;
+}
+
+.candidate-details td:last-child {
+  width: 70%;
+}
+
+/* Job Link Section Styling */
+.job-link-section {
+  margin-top: 20px;
+}
+
+.job-link-section a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Changed to blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.job-link-section a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

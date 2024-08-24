@@ -1,0 +1,57 @@
+.home-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #f06c64, #7a42f4, #3a8bd0, #4cd3c2) !important; /* Gradient background with !important */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.content-box {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.animated-title {
+  font-size: 4em; /* Large font size for heading */
+  font-weight: bold;
+  color: #ffffff; /* Change to white for better contrast */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+  font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+}
+
+.animated-text {
+  font-size: 2em; /* Slightly smaller font for the paragraph */
+  margin-bottom: 30px;
+  color: #ffffff; /* Change to white for better contrast */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+  font-family: 'Open Sans', sans-serif; /* Clean, professional font */
+}
+
+.explore-button {
+  font-size: 1.5em; /* Reduced font size for button */
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: white; /* White background for the circle */
+  color: black; /* Black arrow */
+  width: 60px; /* Reduced size */
+  height: 60px; /* Reduced size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 100px; /* Moved up */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.arrow-icon {
+  font-size: 1.5em;
+}
