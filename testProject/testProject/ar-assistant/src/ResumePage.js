@@ -94,27 +94,7 @@ const ResumePage = () => {
     const selected = e.target.value;
     setSelectedRole(selected);
 
-    // Generate a link based on the selected job role
-    let link = '';
-    switch (selected) {
-      case 'Software Engineer':
-      case 'Backend Developer':
-      case 'Full Stack Developer':
-        link = 'https://github.com';
-        break;
-      case 'Data Scientist':
-      case 'Machine Learning Engineer':
-        link = 'https://www.kaggle.com';
-        break;
-      case 'Cloud Engineer':
-      case 'DevOps Engineer':
-        link = 'https://aws.amazon.com';
-        break;
-      default:
-        link = 'https://www.linkedin.com';
-        break;
-    }
-
+    const link = `https://rojaljoy.github.io/ar-website/?role=${encodeURIComponent(selected)}&name=${encodeURIComponent(candidateDetails.name)}&qualification=${encodeURIComponent(candidateDetails.qualification)}&skillset=${encodeURIComponent(candidateDetails.skillset)}&experience=${encodeURIComponent(candidateDetails.experience)}`;
     setJobLink(link);
   };
 
