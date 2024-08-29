@@ -74,17 +74,41 @@ const ResumePage = () => {
   const getSuggestedJobRoles = (qualification, skillset) => {
     const roles = [];
 
-    if (qualification.includes('Computer') && skillset.includes('Programming')) {
-      roles.push('Software Engineer', 'Web Developer', 'Backend Developer', 'Frontend Developer', 'Full Stack Developer');
+    if ((skillset.includes('React') || skillset.includes('HTML') || skillset.includes('CSS') || skillset.includes('Javascript'))) {
+      roles.push( 'Web Developer');
     }
-    if (qualification.includes('Engineering') && skillset.includes('Project Management')) {
-      roles.push('Project Manager', 'Technical Lead', 'Engineering Manager');
+
+    if ( skillset.includes('Java')) {
+      roles.push('Java Developer' );
     }
-    if (skillset.includes('Data')) {
-      roles.push('Data Analyst', 'Data Scientist', 'Machine Learning Engineer', 'Data Engineer');
+
+    if (skillset.includes('Python')) {
+      roles.push('Data Analyst');
     }
+
     if (skillset.includes('Cloud')) {
-      roles.push('Cloud Architect', 'Cloud Engineer', 'DevOps Engineer');
+      roles.push('Cloud Engineer');
+    }
+
+    if (skillset.includes('Firebase') || skillset.includes('MongoDB') || skillset.includes('SQL') || skillset.includes('SQLlite')) {
+      roles.push('Backend Developer' );
+    }
+
+    if (skillset.includes('Unreal Engine') || skillset.includes('Unity') ) {
+      roles.push('Game Developer');
+    }
+
+    if (skillset.includes('Power BI')  ) {
+      roles.push('Buisness Analyst(Power BI)');
+    }
+    
+    if (skillset.includes('Ardino') || skillset.includes('Rasberry pi') ) {
+      roles.push('IOT Developer');
+    }
+
+    // If no roles match, return an array with a single element indicating no recommendations
+    if (roles.length === 0) {
+      roles.push('No job fields to recommend');
     }
 
     return [...new Set(roles)];
@@ -94,8 +118,12 @@ const ResumePage = () => {
     const selected = e.target.value;
     setSelectedRole(selected);
 
-    const link = `https://rojaljoy.github.io/ar-website/?role=${encodeURIComponent(selected)}&name=${encodeURIComponent(candidateDetails.name)}&qualification=${encodeURIComponent(candidateDetails.qualification)}&skillset=${encodeURIComponent(candidateDetails.skillset)}&experience=${encodeURIComponent(candidateDetails.experience)}`;
-    setJobLink(link);
+    if (selected !== 'No job fields to recommend') {
+      const link = `https://rojaljoy.github.io/ar-website/?role=${encodeURIComponent(selected)}&name=${encodeURIComponent(candidateDetails.name)}&qualification=${encodeURIComponent(candidateDetails.qualification)}&skillset=${encodeURIComponent(candidateDetails.skillset)}&experience=${encodeURIComponent(candidateDetails.experience)}`;
+      setJobLink(link);
+    } else {
+      setJobLink('');
+    }
   };
 
   return (
@@ -112,14 +140,6 @@ const ResumePage = () => {
           <h3>Candidate Details:</h3>
           <table>
             <tbody>
-              <tr>
-                <td><strong>Name:</strong></td>
-                <td>{candidateDetails.name}</td>
-              </tr>
-              <tr>
-                <td><strong>Qualification:</strong></td>
-                <td>{candidateDetails.qualification}</td>
-              </tr>
               <tr>
                 <td><strong>Skillset:</strong></td>
                 <td>{candidateDetails.skillset}</td>
