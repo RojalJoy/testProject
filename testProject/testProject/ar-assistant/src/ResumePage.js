@@ -114,12 +114,13 @@ const ResumePage = () => {
     return [...new Set(roles)];
   };
 
+  
   const handleRoleChange = (e) => {
     const selected = e.target.value;
     setSelectedRole(selected);
 
     if (selected !== 'No job fields to recommend') {
-      const link = `https://rojaljoy.github.io/ar-website/?role=${encodeURIComponent(selected)}&name=${encodeURIComponent(candidateDetails.name)}&qualification=${encodeURIComponent(candidateDetails.qualification)}&skillset=${encodeURIComponent(candidateDetails.skillset)}&experience=${encodeURIComponent(candidateDetails.experience)}`;
+      const link = `https://rojaljoy.github.io/ar-website/?role=${encodeURIComponent(selected)}`;
       setJobLink(link);
     } else {
       setJobLink('');
